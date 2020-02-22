@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  background-color: #111111;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 100vh;
+}
+
+.stars__icon {
+  stroke: #efce4a;
+  stroke-width: 2px;
+  fill: transparent;
+  transition: 0.3s all;
+}
+
+.stars__label {
+  margin: 10px;
+  position: relative;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.stars__checkbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -9999px;
+  opacity: 0;
+}
+
+.stars__label:hover > .stars__icon {
+  fill: #efce4a;
+}
+
+.stars__label:hover ~ .stars__label > .stars__icon {
+  fill: #efce4a;
+}
+
+.stars__checkbox:checked + .stars__label > .stars__icon {
+  fill: #efce4a;
+}
+
+.stars__checkbox:checked ~ .stars__label > .stars__icon {
+  fill: #efce4a;
+}
